@@ -3,8 +3,8 @@
 {% block html_title %}{{ customTitle(t('Customize')) }} {% endblock %}
 
 {% block style_css_block %}
-  <link rel="stylesheet" href="{{ webpack_asset('style').css }}">
-  <link rel="stylesheet" id="jssDefault" {# append id for theme selector #} href="{{ webpack_asset('style-theme-' + theme()).css }}">
+  <link rel="stylesheet" href="{{ webpack_asset('style.css') }}">
+  <link rel="stylesheet" id="jssDefault" {# append id for theme selector #} href="{{ webpack_asset('style-theme-' + theme() + '.css') }}">
 {% endblock %}
 
 {% block html_additional_headers %}
@@ -56,13 +56,13 @@
             <a id="theme-option-default" href="#"
                 class="default {% if 'default' === settingForm['customize:theme'] %}active{% endif %}"
                 onclick="selectTheme('default')"
-                data-theme="{{ webpack_asset('style-theme-default').css }}">
+                data-theme="{{ webpack_asset('style-theme-default.css') }}">
               {% include 'widget/theme-colorbox.html' %}
             </a>
             <a id="theme-option-default-dark" href="#"
                 class="default-dark {% if 'default-dark' === settingForm['customize:theme'] %}active{% endif %}"
                 onclick="selectTheme('default-dark')"
-                data-theme="{{ webpack_asset('style-theme-default-dark').css }}">
+                data-theme="{{ webpack_asset('style-theme-default-dark.css') }}">
               {% include 'widget/theme-colorbox.html' %}
             </a>
           </div>
