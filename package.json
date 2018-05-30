@@ -42,7 +42,7 @@
     "server:dev": "env-cmd config/env.dev.js node-dev --respawn app.js",
     "server:prod:container": "npm run server:prod",
     "server:prod:ci": "npm run server:prod -- --ci",
-    "server:prod": "env-cmd config/env.prod.js node --inspect-brk=9229 app.js",
+    "server:prod": "env-cmd config/env.prod.js node app.js",
     "server": "npm run server:dev",
     "start": "npm run server:prod",
     "test": "mocha --timeout 10000 -r test/bootstrap.js test/**/*.js",
